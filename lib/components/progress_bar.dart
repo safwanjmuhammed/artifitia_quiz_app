@@ -29,7 +29,7 @@ class _ProgressBarState extends State<ProgressBar> {
             ),
           ),
           Container(
-            width: 50,
+            width: 122,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28),
                 color: CustomColor.progressBarColor),
