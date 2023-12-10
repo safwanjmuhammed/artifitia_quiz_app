@@ -1,5 +1,6 @@
 import 'package:artifitia_quiz_app/screens/constants/const_color.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProgressBar extends StatefulWidget {
   const ProgressBar({super.key});
@@ -13,10 +14,28 @@ class _ProgressBarState extends State<ProgressBar> {
   Widget build(BuildContext context) {
     return Container(
       height: 30,
-      width: 317,
+      width: double.infinity,
       decoration: BoxDecoration(
           color: CustomColor.progressBarMainColor,
           borderRadius: BorderRadius.circular(28)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Text(
+              '40',
+              style: GoogleFonts.kanit(fontSize: 15, color: Colors.white),
+            ),
+          ),
+          Container(
+            width: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(28),
+                color: CustomColor.progressBarColor),
+          )
+        ],
+      ),
     );
   }
 }
