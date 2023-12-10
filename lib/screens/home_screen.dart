@@ -1,5 +1,6 @@
 import 'package:artifitia_quiz_app/components/options_box.dart';
 import 'package:artifitia_quiz_app/components/progress_bar.dart';
+import 'package:artifitia_quiz_app/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +12,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  ApiService service = ApiService();
+  @override
+  void initState() {
+    super.initState();
+    service.fetchQuizData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView.builder(
                   itemBuilder: (context, int index) {
                     return const Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.only(top: 15),
                       child: OptionsBox(),
                     );
                   },

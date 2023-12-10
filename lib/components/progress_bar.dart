@@ -17,7 +17,7 @@ class _ProgressBarState extends State<ProgressBar> {
       width: double.infinity,
       decoration: BoxDecoration(
           color: CustomColor.progressBarMainColor,
-          borderRadius: BorderRadius.circular(28)),
+          borderRadius: BorderRadius.all(Radius.circular(18))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

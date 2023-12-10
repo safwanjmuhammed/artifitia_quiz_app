@@ -12,7 +12,7 @@ class _OptionsBoxState extends State<OptionsBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(15),
       // alignment: Alignment.centerLeft,
       // height: 30,
       width: double.infinity,
