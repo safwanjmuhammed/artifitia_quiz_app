@@ -61,14 +61,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     const Padding(padding: EdgeInsets.only(top: 20)),
                     Expanded(
                       child: ListView.builder(
-                        itemCount: options.length,
+                        itemCount: 1,
                         itemBuilder: (context, int index) {
+                          print(options.length);
                           return Padding(
                             padding: const EdgeInsets.only(top: 15),
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                print(index);
+                                print(quizData[index].options[index].text);
+                              },
                               child: OptionsBox(
-                                options: quizData[index].options[index].text,
+                                options: quizData[index].options,
                                 index: index,
                               ),
                             ),
