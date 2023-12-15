@@ -30,9 +30,13 @@ class _OptionsBoxState extends State<OptionsBox> {
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(28)),
           //options
-          child: Text(
-            '${widget.index + 1}. ${option.text}',
-            style: GoogleFonts.kanit(color: Colors.white, fontSize: 18),
+          child: Column(
+            children: [
+              Text(
+                '${widget.index}. ${option.text}',
+                style: GoogleFonts.kanit(color: Colors.white, fontSize: 18),
+              ),
+            ],
           ),
         ),
       ));

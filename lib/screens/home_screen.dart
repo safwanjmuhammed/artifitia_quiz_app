@@ -1,6 +1,5 @@
 import 'package:artifitia_quiz_app/components/options_box.dart';
 import 'package:artifitia_quiz_app/components/progress_bar.dart';
-import 'package:artifitia_quiz_app/models/options_model.dart';
 import 'package:artifitia_quiz_app/models/quiz_model.dart';
 import 'package:artifitia_quiz_app/services/api_service.dart';
 import 'package:flutter/material.dart';
@@ -16,17 +15,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   ApiService service = ApiService();
   List<QuizModel> quizData = [];
-  List<OptionsModel> options = [];
 
   void getQuizData() async {
     final data = await service.fetchQuizData();
     setState(() {
       quizData = data;
     });
-    for (var element in quizData) {
-      options = element.options;
-      print(options[0].text);
-    }
   }
 
   @override
@@ -63,13 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: ListView.builder(
                         itemCount: 1,
                         itemBuilder: (context, int index) {
-                          print(options.length);
                           return Padding(
                             padding: const EdgeInsets.only(top: 15),
                             child: GestureDetector(
                               onTap: () {
                                 print(index);
-                                print(quizData[index].options[index].text);
                               },
                               child: OptionsBox(
                                 options: quizData[index].options,

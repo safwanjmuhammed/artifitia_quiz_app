@@ -1,6 +1,7 @@
-import 'package:artifitia_quiz_app/screens/constants/const_color.dart';
+import 'package:artifitia_quiz_app/constants/const_color.dart';
 import 'package:artifitia_quiz_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,15 +13,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: CustomColor.scaffoldColor,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const WelcomeScreen(),
+    return ScreenUtilInit(
+      builder: (buildContext, widget) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            scaffoldBackgroundColor: CustomColor.scaffoldColor,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const WelcomeScreen(),
+        );
+      },
     );
   }
 }
