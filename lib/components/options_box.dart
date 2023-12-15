@@ -1,5 +1,6 @@
 import 'package:artifitia_quiz_app/models/options_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OptionsBox extends StatefulWidget {
@@ -31,10 +32,11 @@ class _OptionsBoxState extends State<OptionsBox> {
               borderRadius: BorderRadius.circular(28)),
           //options
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 '${widget.index}. ${option.text}',
-                style: GoogleFonts.kanit(color: Colors.white, fontSize: 18),
+                style: GoogleFonts.kanit(color: Colors.white, fontSize: 18.sp),
               ),
             ],
           ),

@@ -3,6 +3,7 @@ import 'package:artifitia_quiz_app/components/progress_bar.dart';
 import 'package:artifitia_quiz_app/models/quiz_model.dart';
 import 'package:artifitia_quiz_app/services/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,17 +43,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(padding: EdgeInsets.only(top: 40)),
+                    Padding(padding: EdgeInsets.only(top: 40.h)),
                     const ProgressBar(),
-                    const Padding(padding: EdgeInsets.only(top: 40)),
+                    Padding(padding: EdgeInsets.only(top: 40.h)),
                     Text(
                       quizData[0].question,
                       style: GoogleFonts.kanit(
-                          fontSize: 24,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.w400,
                           color: Colors.white),
                     ),
-                    const Padding(padding: EdgeInsets.only(top: 20)),
+                    Padding(padding: EdgeInsets.only(top: 15.h)),
                     Expanded(
                       child: ListView.builder(
                         itemCount: 1,

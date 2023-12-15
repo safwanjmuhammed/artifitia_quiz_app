@@ -10,7 +10,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQueryData = MediaQuery.of(context);
-    print(mediaQueryData.padding.h);
+    print(mediaQueryData.size.height);
     return Scaffold(
       backgroundColor: CustomColor.scaffoldColor,
       body: Container(
@@ -25,6 +25,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 316.h,
               width: 316.w,
             ),
+            const Spacer(flex: 10),
             GestureDetector(
               child: Container(
                 alignment: Alignment.center,
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               text: TextSpan(
                   style: TextStyle(
-                    height: 1.2.h,
+                    height: 1.2,
                   ),
                   children: [
                     TextSpan(

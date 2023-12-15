@@ -1,5 +1,6 @@
 import 'package:artifitia_quiz_app/models/quiz_model.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 class ApiService {
   String url = 'https://nice-lime-hippo-wear.cyclic.app/api/v1/quiz';
@@ -19,7 +20,9 @@ class ApiService {
         print(response.statusCode);
       }
     } on DioException catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
     throw Exception('Failed...!');
   }
