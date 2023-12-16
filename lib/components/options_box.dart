@@ -1,6 +1,9 @@
 import 'package:artifitia_quiz_app/models/options_model.dart';
+import 'package:artifitia_quiz_app/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class OptionsBox extends StatefulWidget {
@@ -8,8 +11,8 @@ class OptionsBox extends StatefulWidget {
   final int index;
   const OptionsBox({
     super.key,
-    required this.options,
-    required this.index,
+    this.options = const [],
+    this.index = 0,
   });
 
   @override
@@ -19,6 +22,10 @@ class OptionsBox extends StatefulWidget {
 class _OptionsBoxState extends State<OptionsBox> {
   @override
   Widget build(BuildContext context) {
+    bool isCorrectscreen = Get.currentRoute.contains(Routes.correctScreen);
+    print(isCorrectscreen);
+    print(widget.options);
+
     final children = <Widget>[];
     for (var option in widget.options) {
       children.add(Padding(
@@ -36,7 +43,9 @@ class _OptionsBoxState extends State<OptionsBox> {
             children: [
               Text(
                 '${widget.index}. ${option.text}',
-                style: GoogleFonts.kanit(color: Colors.white, fontSize: 18.sp),
+                style: GoogleFonts.kanit(
+                    color: isCorrectscreen ? Colors.red : Colors.white,
+                    fontSize: 18.sp),
               ),
             ],
           ),

@@ -1,7 +1,10 @@
 import 'package:artifitia_quiz_app/constants/const_color.dart';
+import 'package:artifitia_quiz_app/router/router.dart';
+import 'package:artifitia_quiz_app/router/routes.dart';
 import 'package:artifitia_quiz_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (buildContext, widget) {
-        return MaterialApp(
+        return GetMaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
+          initialRoute: Routes.welcomeScreen,
+          getPages: route,
           theme: ThemeData(
             scaffoldBackgroundColor: CustomColor.scaffoldColor,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

@@ -1,9 +1,12 @@
 import 'package:artifitia_quiz_app/components/options_box.dart';
 import 'package:artifitia_quiz_app/components/progress_bar.dart';
 import 'package:artifitia_quiz_app/models/quiz_model.dart';
+import 'package:artifitia_quiz_app/router/routes.dart';
+import 'package:artifitia_quiz_app/screens/correct_screen.dart';
 import 'package:artifitia_quiz_app/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -62,7 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: const EdgeInsets.only(top: 15),
                             child: GestureDetector(
                               onTap: () {
-                                print(index);
+                                Get.toNamed(Routes.correctScreen, arguments: {
+                                  'question': quizData[index].question,
+                                  'options': quizData[index].options
+                                });
                               },
                               child: OptionsBox(
                                 options: quizData[index].options,
