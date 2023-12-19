@@ -21,6 +21,7 @@ class _CorrectScreenState extends State<CorrectScreen> {
     final Map<String, dynamic> arguments = Get.arguments;
     final String question = arguments['question'];
     final List<OptionsModel> options = arguments['options'];
+
     return Scaffold(
       body: SafeArea(
         child: Padding(

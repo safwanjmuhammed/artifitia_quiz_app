@@ -65,6 +65,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: const EdgeInsets.only(top: 15),
                             child: GestureDetector(
                               onTap: () {
+                                print(index);
+                                getOptionIndex() {}
                                 Get.toNamed(Routes.correctScreen, arguments: {
                                   'question': quizData[index].question,
                                   'options': quizData[index].options

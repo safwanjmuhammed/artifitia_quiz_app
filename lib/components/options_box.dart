@@ -20,21 +20,22 @@ class OptionsBox extends StatefulWidget {
 }
 
 class _OptionsBoxState extends State<OptionsBox> {
+  bool isCorrectscreen = Get.currentRoute.contains(Routes.correctScreen);
+
   @override
   Widget build(BuildContext context) {
-    bool isCorrectscreen = Get.currentRoute.contains(Routes.correctScreen);
-    print(isCorrectscreen);
-    print(widget.options);
-
     final children = <Widget>[];
     for (var option in widget.options) {
+      print(option.isCorrect);
       children.add(Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
           padding: const EdgeInsets.all(15),
           width: double.infinity,
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.white, width: 1),
+              border: Border.all(
+                  color: isCorrectscreen ? Colors.grey : Colors.white,
+                  width: 1),
               color: Colors.transparent,
               borderRadius: BorderRadius.circular(28)),
           //options
@@ -44,7 +45,7 @@ class _OptionsBoxState extends State<OptionsBox> {
               Text(
                 '${widget.index}. ${option.text}',
                 style: GoogleFonts.kanit(
-                    color: isCorrectscreen ? Colors.red : Colors.white,
+                    color: isCorrectscreen ? Colors.grey : Colors.white,
                     fontSize: 18.sp),
               ),
             ],
